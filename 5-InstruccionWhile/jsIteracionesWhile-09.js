@@ -1,21 +1,40 @@
-/*
-Al presionar el botón pedir  números  hasta que el usuario quiera,
-mostrar el número máximo y el número mínimo ingresado.*/
-function mostrar()
-{	// declarar variables
-	var banderaDelPrimero;
-	var numeroIngresado;
-	var numeroMaximo;
-	var numeroMinimo;
-	var respuesta;
-	//iniciar variables
-	banderaDelPrimero="es el primero";
-	respuesta='si';
-	while(respuesta=="si")
-	{
-		
-		respuesta=prompt("desea continuar?");
-	}
-	txtIdMaximo.value=numeroMaximo;
-	txtIdMinimmo.value=numeroMinimo;
-}//FIN DE LA FUNCIÓN
+// leon rodriguez grupo 1 div z
+// ejercicio 09 while
+
+function mostrar() {
+  // declarar variables
+  let banderaDelPrimero;
+  let numeroIngresado;
+  let numeroMaximo;
+  let numeroMinimo;
+  let respuesta;
+
+  numeroMaximo = 0;
+  numeroMinimo = 0;
+  banderaDelPrimero = true;
+
+  do {
+    numeroIngresado = prompt("ingresa un numero");
+    numeroIngresado = parseInt(numeroIngresado);
+
+    if (!banderaDelPrimero) {
+      if (numeroIngresado < numeroMinimo) {
+        numeroMinimo = numeroIngresado;
+      } else {
+        if (numeroIngresado > numeroMaximo) {
+          numeroMaximo = numeroIngresado;
+        }
+      }
+    } else {
+      console.log("a");
+      numeroMaximo = numeroIngresado;
+      numeroMinimo = numeroIngresado;
+      banderaDelPrimero = false;
+    }
+
+    respuesta = confirm();
+  } while (respuesta);
+
+  txtIdMaximo.value = numeroMaximo;
+  txtIdMinimo.value = numeroMinimo;
+} //FIN DE LA FUNCIÓN

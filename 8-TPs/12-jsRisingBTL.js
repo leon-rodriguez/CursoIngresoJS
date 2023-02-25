@@ -1,19 +1,90 @@
-/*RISING BTL. Empresa dedicada a la toma de datos para realizar estadísticas y censos nos pide realizar una carga de datos validada e ingresada por ventanas emergentes solamente (para evitar hacking y cargas maliciosas) y luego asignarla a cuadros de textos. 
-12.   Los datos requeridos son los siguientes:
-A.	Edad, entre 18 y 90 años inclusive.
-B.	Sexo, “M” para masculino y “F” para femenino
-C.	Estado civil, 1-para soltero, 2-para casados, 3-para divorciados y 4-para viudos
-D.	Sueldo bruto, no menor a 8000.
-E.	Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
-F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para nacionalizados.
- */
-function ComenzarIngreso () 
-{
- 	//definicion de variables
- 	var edadIngresada;
- 	var sexoIngresado;
- 	var estadoCivilIngresado;
+// Leon Rodriguez Grupo 1 DIV Z
+// Ejercicio integrador while
 
+function ComenzarIngreso() {
+  //definicion de variables
+  let edadIngresada;
+  let sexoIngresado;
+  let estadoCivilIngresado;
+  let sueldoIngresado;
+  let legajoIngresado;
+  let nacionalidadIngresada;
+  let mensajeEstadoCivil;
+  let mensajeNacionalidad;
 
+  //edad ingresada
+  edadIngresada = prompt("Cual es tu edad?");
+  while (edadIngresada < 18 || edadIngresada > 90) {
+    edadIngresada = prompt("Ingrese una edad valida");
+  }
+  txtIdEdad.value = edadIngresada;
 
+  //sexo ingresado
+  sexoIngresado = prompt("Cual es tu sexo?");
+  while (sexoIngresado != "f" && sexoIngresado != "m") {
+    sexoIngresado = prompt("Ingrese una sexo valido");
+  }
+  txtIdSexo.value = sexoIngresado;
+
+  //estadoCivil ingresado
+  estadoCivilIngresado = prompt("Cual es tu estado civil?");
+  estadoCivilIngresado = parseInt(estadoCivilIngresado);
+  while (estadoCivilIngresado < 0 || estadoCivilIngresado > 4) {
+    estadoCivilIngresado = prompt("Ingrese una estado civil valido");
+    estadoCivilIngresado = parseInt(estadoCivilIngresado);
+  }
+  switch (estadoCivilIngresado) {
+    case 1:
+      //console.log(1);
+      mensajeEstadoCivil = "soltero";
+      break;
+    case 2:
+      //console.log(2);
+      mensajeEstadoCivil = "casado";
+      break;
+    case 3:
+      //console.log(3);
+      mensajeEstadoCivil = "divorciado";
+      break;
+    case 4:
+      //console.log(4);
+      mensajeEstadoCivil = "viudo";
+  }
+  txtIdEstadoCivil.value = mensajeEstadoCivil;
+
+  //sueldo ingresado
+  sueldoIngresado = prompt("Cual es tu sueldo?");
+  while (sueldoIngresado < 8000) {
+    sueldoIngresado = prompt("Ingrese una sueldo valido");
+  }
+  txtIdSueldo.value = sueldoIngresado;
+
+  //legajo ingresado
+  legajoIngresado = prompt("Cual es tu legajo?");
+  legajoIngresado = parseInt(legajoIngresado);
+  while (legajoIngresado < 1000 || legajoIngresado > 9999) {
+    legajoIngresado = prompt("Ingrese un legajo valido");
+    legajoIngresado = parseInt(legajoIngresado);
+  }
+  txtIdLegajo.value = legajoIngresado;
+
+  //nacionalidad ingresada
+  nacionalidadIngresada = prompt("Cual es tu nacionalidad?");
+  while (
+    nacionalidadIngresada != "A" &&
+    nacionalidadIngresada != "E" &&
+    nacionalidadIngresada != "N"
+  ) {
+    nacionalidadIngresada = prompt("Ingrese una nacionalidad valida");
+  }
+  switch (nacionalidadIngresada) {
+    case "A":
+      mensajeNacionalidad = "argentino";
+      break;
+    case "extranjero":
+      break;
+    case "nacionalizado":
+      break;
+  }
+  txtIdNacionalidad.value = mensajeNacionalidad;
 }

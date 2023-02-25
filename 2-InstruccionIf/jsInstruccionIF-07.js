@@ -1,8 +1,15 @@
-function mostrar()
-{
-	//tomo la edad  
-	alert("ok");
-	
+//Leon Rodriguez DIV Z Grupo 1
+// ejercicio 07
 
+function mostrar() {
+  let edad;
+  let estadoCivil;
 
-}//FIN DE LA FUNCIÓN
+  edad = document.getElementById("txtIdEdad").value;
+  edad = parseInt(edad);
+  estadoCivil = document.getElementById("estadoCivil").value;
+
+  if (edad < 18 && estadoCivil != "Soltero") {
+    alert("Es muy pequeño para NO ser soltero");
+  }
+} //FIN DE LA FUNCIÓN

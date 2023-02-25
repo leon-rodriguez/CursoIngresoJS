@@ -1,7 +1,11 @@
-/*
-al presionar el botón mostrar 10 repeticiones 
-con números ASCENDENTE, desde el 1 al 10.*/
-function mostrar()
-{
-	alert('iteración while');
-}//FIN DE LA FUNCIÓN
+// Leon Rodriguez DIV Z Grupo 1
+//Ejercicio while 01
+
+let ascendente;
+ascendente = 0;
+function mostrar() {
+  while (ascendente < 11) {
+    alert(ascendente);
+    ascendente += 1;
+  }
+} //FIN DE LA FUNCIÓN
